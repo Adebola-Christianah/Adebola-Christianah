@@ -1,0 +1,36 @@
+.nav-bar {
+    height: 50px;
+
+    background-color: rgb(54, 54, 54);
+    color: rgb(243, 227, 243);
+    font-size: 30px;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    margin: 0;
+    
+
+
+    
+    
+}
+.add{
+    display: block;
+    font-weight: bold;
+    color: rgb(54, 54, 54);
+    font-size: 30px;
+    margin: top 0.5em;
+    margin-bottom: 0.2em;
+    text-align: center;
+
+}
+.todo{
+    margin-left: 43.5em;
+
+}
+.sub{
+    background-color: rgb(51, 51, 218);
+    height: 35px;
+    width: 60px;
+    border-radius:10%;
+    padding: 5px;
+}
