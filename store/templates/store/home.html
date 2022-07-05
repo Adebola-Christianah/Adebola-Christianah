@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %}
+{% block title %}My store{% endblock %}
+{% block content%}
+<div class="container">
+  <section class="py-5 text-center container">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Album example</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+  </section>
+
+
+  <div class="pb-5 h5">All products</div>
+  <div class="row ">
+    {% for product in products %}
+  <div class="col-sm-9 col-md-6 col-lg-3 py-2">
+    <div class="card" style="width: 100%;">
+      {% for image in product.product_image.all %}
+      {% if image.is_feature %}
+      <div class="col-md-5 col-lg-5  order-md-first bg-light"><img class="image-fluid mx-auto d-block" width="100%"height="200rem" src="{{image.image.url}}" alt="{image.image.alt_text}"></div>
+      {% endif %}
+  {% endfor %}
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <a href="{{product.get_absolute_url}}" class="btn btn-primary">view</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+
+</div>
+  
+{% endblock content%}

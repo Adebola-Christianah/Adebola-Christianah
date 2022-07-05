@@ -1,0 +1,22 @@
+.discount_value{
+    
+    border: 2px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    height: 15px;
+    width: 14px;
+   
+    box-sizing: content-box;
+    font-weight: 600;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    top: -1px;
+    right: 10px;
+    position: absolute;
+}
+.regular_price{
+    position: relative;
+   
+}

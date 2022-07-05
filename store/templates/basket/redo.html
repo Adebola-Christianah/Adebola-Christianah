@@ -1,0 +1,46 @@
+{% extends 'store/base.html' %}
+{% block title %}Basket{% endblock %}
+{% block content%}
+<main class="pt-5">
+    <div class="container"><h1 class="h5"> Basket page</h1>
+        {% for item in basket %}
+        {% with product=item.product %}
+        <div class="row mb-4 border">
+            <div class="col-md-3 col-lg-2  order-md-first bg-light">
+             <img class="image-fluid mx-auto d-block" width="100%"height="200rem" src="{{product.image.url}}" alt="Responsive-image">
+            </div>
+            <div class="col-md-7 col-lg-7  ps-md-3 ps-lg-5">
+                <h1 class="mb-0 h4">{{product.name}}</h1>
+                <p>{{product.description}}</p>
+            <div class="border">
+                <div class="border-bottom">
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <span class="h4 fw-bold">Price:{{item.total_price}}</span>        
+                        </div>
+                    </div>
+                </div> 
+    <div class="row p-3">
+                                <div class="col-6"><select class="form-select" id="select" aria-label="Default select example">
+                                    <option selected>{{item.qty}}</option>
+                                    <option value="1">1</option>
+              </select> 
+                                </div>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+        
+        {% endwith %}
+        {% endfor %}
+        <div class="col-12 text-end " id="subtotal">
+            <div class="h6 fw-bold">
+                {{basket.get_total_price}}
+            </div>
+        </div>
+        </div>
+
+    </div>
+</main>
+{% endblock content%}
